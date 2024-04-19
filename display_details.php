@@ -23,34 +23,36 @@ $result = mysqli_query($con, $sql);
 </head>
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+    <div class="max-w-3xl w-full bg-white p-8 rounded-lg shadow-lg">
         <h2 class="text-2xl font-semibold text-center mb-6">User Details</h2>
 
         <?php if (mysqli_num_rows($result) > 0) : ?>
-            <table class="w-full mb-6">
-                <thead>
-                    <tr class="bg-blue-500 text-white">
-                        <th class="py-2 px-4">Username</th>
-                        <th class="py-2 px-4">Email</th>
-                        <th class="py-2 px-4">Address</th>
-                        <th class="py-2 px-4">Role</th>
-                        <th class="py-2 px-4">Salary</th>
-                        <th class="py-2 px-4">Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-                        <tr class="border-b border-gray-200">
-                            <td class="py-2 px-4"><?php echo $row['username']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['email']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['address']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['role']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['salary']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['phone']; ?></td>
+            <div class="overflow-x-auto">
+                <table class="w-full table-auto">
+                    <thead>
+                        <tr class="bg-blue-500 text-white">
+                            <th class="py-2 px-4">Username</th>
+                            <th class="py-2 px-4">Email</th>
+                            <th class="py-2 px-4">Address</th>
+                            <th class="py-2 px-4">Role</th>
+                            <th class="py-2 px-4">Salary</th>
+                            <th class="py-2 px-4">Phone</th>
                         </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4"><?php echo $row['username']; ?></td>
+                                <td class="py-2 px-4"><?php echo $row['email']; ?></td>
+                                <td class="py-2 px-4"><?php echo $row['address']; ?></td>
+                                <td class="py-2 px-4"><?php echo $row['role']; ?></td>
+                                <td class="py-2 px-4"><?php echo $row['salary']; ?></td>
+                                <td class="py-2 px-4"><?php echo $row['phone']; ?></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
         <?php else : ?>
             <p class="text-center text-gray-600">No user details found.</p>
         <?php endif; ?>
