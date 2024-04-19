@@ -9,12 +9,6 @@ $role=mysqli_real_escape_string($con,$role);
 $salary=mysqli_real_escape_string($con,$salary);
 $phone=mysqli_real_escape_string($con,$phone);
 $sql="INSERT INTO user_details(address,role,salary,phone)VALUES('$address','$role','$salary','$phone')";
-if (mysqli_query($con, $sql)){
-    echo "<h4>User details saved successfully</h4>";
-}
-else{
-    echo "Error: ".$sql."<br>".mysqli_error($con);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

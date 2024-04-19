@@ -22,8 +22,8 @@ $result = mysqli_query($con, $sql);
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl w-full bg-white p-8 rounded-lg shadow-lg">
+<body class="bg-gray-100 min-h-screen flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl w-full bg-white p-8 rounded-lg shadow-lg">
         <h2 class="text-2xl font-semibold text-center mb-6">User Details</h2>
 
         <?php if (mysqli_num_rows($result) > 0) : ?>

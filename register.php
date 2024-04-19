@@ -16,8 +16,7 @@ if(mysqli_num_rows($result) > 0) {
 else {
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')"; // Added a closing single quote for $hashed_password
     if (mysqli_query($con, $sql)) {
-        header("Location: index.php?success=true");
-        exit();
+        header("Location: signin.html");
     } else {
         echo "Error: ".$sql. "<br>". mysqli_error($con);
     }
