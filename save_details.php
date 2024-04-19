@@ -11,7 +11,7 @@ $phone=mysqli_real_escape_string($con,$phone);
 $sql="INSERT INTO user_details(address,role,salary,phone)VALUES('$address','$role','$salary','$phone')";
 if (mysqli_query($con, $sql)){
     echo "<h4>User details saved successfully</h4>";
-} 
+}
 else{
     echo "Error: ".$sql."<br>".mysqli_error($con);
 }
@@ -22,10 +22,18 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="./output.css">
 </head>
-<body>
-    <h4><a href="display_details.php">Display details</a></h4>
-    
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg text-center">
+        <h2 class="text-2xl font-semibold mb-6">User Dashboard</h2>
+
+        <div class="mb-4">
+            <a href="display_details.php"
+                class="block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
+                Display Details
+            </a>
+        </div>
+    </div>
 </body>
 </html>

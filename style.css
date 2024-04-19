@@ -1,26 +1,3 @@
-body{
-    background-color:lightskyblue;
-    display:flex;
-    align-items:center;
-    background-repeat:no-repeat;
-}
-h2{
-    color:black;
-    display:flex;
-    align-items:center;    
-}
-form{
-    align-items:center;
-    background-color:aliceblue;
-    height:250px;
-    width:50%;
-    padding:4%;
-    margin:100px 225px;
-    text-align:center;
-}
-.space{
-    margin-bottom: 10px;
-}
-a{ 
-    color: rgb(7, 7, 7);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
