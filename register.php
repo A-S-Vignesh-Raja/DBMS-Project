@@ -14,7 +14,7 @@ if(mysqli_num_rows($result) > 0) {
     header("Location: index.php?error=duplicate");
 } 
 else {
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')"; // Added a closing single quote for $hashed_password
+    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')"; 
     if (mysqli_query($con, $sql)) {
         header("Location: signin.html");
     } else {

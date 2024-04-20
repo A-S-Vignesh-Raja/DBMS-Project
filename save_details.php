@@ -1,6 +1,6 @@
 <?php
 include('connection.php');
-$address=$_POST['address'];
+/*$address=$_POST['address'];
 $role=$_POST['role'];
 $salary=$_POST['salary'];
 $phone=$_POST['phone'];
@@ -8,7 +8,22 @@ $address=mysqli_real_escape_string($con,$address);
 $role=mysqli_real_escape_string($con,$role);
 $salary=mysqli_real_escape_string($con,$salary);
 $phone=mysqli_real_escape_string($con,$phone);
-$sql="INSERT INTO user_details(address,role,salary,phone)VALUES('$address','$role','$salary','$phone')";
+$sql="INSERT INTO user_details(address,role,salary,phone)VALUES('$address','$role','$salary','$phone')";*/
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $address = mysqli_real_escape_string($con, $_POST['address']);
+    $role = mysqli_real_escape_string($con, $_POST['role']);
+    $salary = mysqli_real_escape_string($con, $_POST['salary']);
+    $phone = mysqli_real_escape_string($con, $_POST['phone']);
+
+    $sql = "INSERT INTO user_details (address, role, salary, phone) VALUES ('$address', '$role', '$salary', '$phone')";
+    
+    if (mysqli_query($con, $sql)) {
+        echo " ";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
